@@ -1,0 +1,112 @@
+/* Controle de cores */
+@cor_01: #3399cc;
+@cor_02: #336699;
+
+/* Fontes importadas */
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+/* Propriedades */
+body {
+  font: 14px sans-serif;
+  font-family: 'Open Sans';
+  margin: 0;
+  padding: 0;
+  padding-bottom: 50px;
+  background: #fefefe;
+}
+.all{
+	width: 1000px;
+	margin: 0 auto;
+}
+h1{
+	background: #fff;
+	color:@cor_02;
+	padding: 5px;
+}
+h2{
+	color: @cor_01;
+	width: 600px;
+  display: inline;
+}
+button{
+	outline: 0;
+	border: 0;
+	background: @cor_01;
+	color: #fff;
+	padding: 10px;
+	cursor: pointer;
+	font-weight: bold;
+}
+.button-update{
+	background: @cor_02;
+}
+.button-clear{
+	display: inline;
+	margin-left: 30px;
+}
+.inputs, .buttons, form{
+	width: 200px;
+	margin: 10px 0px 10px 0px;
+	font-family: 'Open Sans';
+}
+.inputs{
+	height: 30px
+}
+.buttons{
+	height: 50px
+}
+.container{
+	height: 400px;
+	.form{
+		height: 400px;
+	}
+	.graphic{
+		width: 600px;
+	  height: 400px;
+	  position: relative;
+	  top: -400px;
+	  left: 300px;
+	}
+}
+.graphic svg g text{
+	font-size: 10px sans-serif;
+}
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #333;
+  shape-rendering: crispEdges;
+}
+.line {
+  fill: none;
+  stroke: @cor_01;
+  stroke-width: 1.5px;
+}
+.table-footer{
+	margin-top: 10px;
+}
+.values{
+	width: 100%;
+	border-collapse: collapse;
+ 	border-spacing: 0;
+ 	margin-top: 20px;
+	.label{
+		background: @cor_02;
+		color: #fff;
+		font-weight: bold;
+	}
+	tr{
+		height: 24px;
+		border-bottom: solid 1px #ddd;
+  		color: #333;
+	}
+	td{
+		width: 100px;
+		margin: 0;
+		padding: 6px 25px 6px 25px;
+	}
+	.table-footer{
+		margin-bottom: 50px;
+		margin-bottom: 50px;
+	}
+}

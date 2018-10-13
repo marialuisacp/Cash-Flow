@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html ng-app="cashFlow">
+<head>
+  <title>Fluxo de Caixa</title>
+  <meta charset="UTF-8">
+  <script data-require="angular.js@1.2.x" src="js/angular/angular.js" data-semver="1.2.1"></script>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script type="text/javascript" src="js/jquery/jquery-1.11.0.min.js"></script>
+  <script src="js/d3/d3.v3.js"></script>
+  <script type="text/javascript" src="app/app.js"></script>
+</head>
+<body>
+<div class="all" ng-controller="operationsController">
+  <div class="header">
+    <h1> Cálculo do Fluxo de Caixa </h1>
+    <p class="description">Fluxo de caixa de uma empresa num determinado período.</p>
+  </div>
+  <div class="container">
+    <div class="form box">
+      <form ng-submit="addOperation()">
+        <input class="inputs" type="date" ng-model="dateOperation" min="2000-01-02">
+        <input class="inputs" type="number" ng-model="valueOperation" min="0" step="10">
+        <input type="radio" ng-model="typeOperation" value="Receita">Receita
+        <input type="radio" ng-model="typeOperation" value="Despesa">Despesa
+        <br>
+        <button class="buttons">Novo lançamento</button>
+      </form>
+      <button class="buttons button-update" ng-click="update(arrayOperations)">Gerar grafico</button>
+    </div>
+
+    <div class="graphic box"></div>
+  </div>
+  <div class="table-footer">
+    <h2>Valores lançados</h2>
+    <button class="button-clear" ng-click="clearOperations()">Limpar dados</button>
+
+    <table class="values">
+      <tr class="label">
+        <td>Data</td>
+        <td>Tipo</td>
+        <td>Valor</td>
+        <td>Total</td>
+      </tr>
+      <tr ng-repeat=" operation in arrayOperations " ng-show= 'operation.show' >
+        <td>{{ operation.dateString }}</td>
+        <td>{{ operation.type }}</td>
+        <td>{{ operation.valuec }}</td>
+        <td>{{ operation.total }}</td>
+      </tr>
+    </table>
+  </div>
+</div>
+</body>
+</html>
